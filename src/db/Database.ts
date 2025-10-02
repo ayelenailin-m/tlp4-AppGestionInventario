@@ -14,7 +14,7 @@ export class Database {
   private pool!: Pool;
 
   private constructor() {
-    /*privado*/
+    // privado
   }
 
   public static getInstance(): Database {
