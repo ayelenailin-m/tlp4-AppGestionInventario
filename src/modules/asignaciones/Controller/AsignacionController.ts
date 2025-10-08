@@ -28,4 +28,23 @@ export class AsignacionController {
     const data = await this.service.devolver({ dispositivoId });
     return this.http.ok(res, data);
   };
+
+  listarAbiertas = async (_req: Request, res: Response) => {
+    const data = await this.service.listarAbiertas();
+    return this.http.ok(res, data);
+  };
+
+  listarHistorial = async (req: Request, res: Response) => {
+    const usuarioId = req.query.usuarioId
+      ? Number(req.query.usuarioId)
+      : undefined;
+    const dispositivoId = req.query.dispositivoId
+      ? Number(req.query.dispositivoId)
+      : undefined;
+    const data = await this.service.listarHistorial({
+      usuarioId,
+      dispositivoId,
+    });
+    return this.http.ok(res, data);
+  };
 }

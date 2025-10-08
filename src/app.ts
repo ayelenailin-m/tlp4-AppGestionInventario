@@ -52,6 +52,8 @@ export class App {
 
   private handleErrors() {
     this.app.use((err: any, _req: any, res: any, _next: any) => {
+      console.log("[ERR", err);
+
       const { code, message } = ErrorMapper.toHttp(err);
       return this.http.fail(res, code, message);
     });

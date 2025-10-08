@@ -21,6 +21,19 @@ export class AsignacionRoutes {
     const guard = new RoleGuard();
 
     this.router = Router();
+
+    this.router.get(
+      "/asignaciones/abiertas",
+      auth.requiereAuth,
+      controller.listarAbiertas
+    );
+    this.router.get(
+      "/asignaciones",
+      auth.requiereAuth,
+      controller.listarHistorial
+    );
+
+    // solo admin
     this.router.post(
       "/asignaciones/:dispositivoId/asignar",
       auth.requiereAuth,

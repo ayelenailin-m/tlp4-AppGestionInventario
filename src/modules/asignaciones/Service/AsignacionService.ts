@@ -98,4 +98,21 @@ export class AsignacionService {
       conn.release();
     }
   }
+
+  async listarAbiertas() {
+    const db = Database.getInstance();
+    const conn = await db.getConnection();
+
+    return this.asigRepo.listarAbiertas(conn);
+  }
+
+  async listarHistorial(filtros: {
+    usuarioId?: number;
+    dispositivoId?: number;
+  }) {
+    const db = Database.getInstance();
+    const conn = await db.getConnection();
+
+    return this.asigRepo.listarHistorial(conn, filtros);
+  }
 }
