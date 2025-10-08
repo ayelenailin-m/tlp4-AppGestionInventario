@@ -35,16 +35,20 @@ export class AsignacionController {
   };
 
   listarHistorial = async (req: Request, res: Response) => {
-    const usuarioId = req.query.usuarioId
-      ? Number(req.query.usuarioId)
-      : undefined;
-    const dispositivoId = req.query.dispositivoId
-      ? Number(req.query.dispositivoId)
-      : undefined;
-    const data = await this.service.listarHistorial({
-      usuarioId,
-      dispositivoId,
-    });
+    const usuarioId =
+      req.query.usuarioId !== undefined
+        ? Number(req.query.usuarioId)
+        : undefined;
+    const dispositivoId =
+      req.query.dispositivoId !== undefined
+        ? Number(req.query.dispositivoId)
+        : undefined;
+
+    const filtros: { usuarioId?: number; dispositivoId?: number } = {};
+    if (usuarioId !== undefined) filtros.usuarioId = usuarioId;
+    if (dispositivoId !== undefined) filtros.dispositivoId = dispositivoId;
+
+    const data = await this.service.listarHistorial(filtros);
     return this.http.ok(res, data);
   };
 }
