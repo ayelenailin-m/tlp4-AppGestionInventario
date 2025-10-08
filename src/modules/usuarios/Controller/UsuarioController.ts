@@ -31,4 +31,16 @@ export class UsuarioController {
     const data = await this.service.login({ correo, contrasenia });
     return this.http.ok(res, data);
   };
+
+  primerAdmin = async (req: Request, res: Response) => {
+    const { nombre, correo, contrasenia } = req.body ?? {};
+    if (!nombre || !correo || !contrasenia)
+      throw new ValidationError("Faltan datos");
+    const data = await this.service.primerAdmin({
+      nombre,
+      correo,
+      contrasenia,
+    });
+    return this.http.created(res, data);
+  };
 }

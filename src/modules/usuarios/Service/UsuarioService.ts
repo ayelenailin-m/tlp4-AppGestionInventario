@@ -3,7 +3,11 @@
 import bcrypt from "bcrypt";
 import type { IUsuarioRepo } from "../Repo/IUsuarioRepo";
 import type { RegistroDTO, LoginDTO } from "../Model/Usuario.model";
-import { ConflictError, NotFoundError } from "../../../core/Errors";
+import {
+  ConflictError,
+  NotFoundError,
+  ValidationError,
+} from "../../../core/Errors";
 import { JwtService } from "../../../auth/JwtService";
 
 export class UsuarioService {
@@ -40,5 +44,24 @@ export class UsuarioService {
 
     const token = this.jwt.firmar({ id: u.id, rol: u.rol });
     return { id: u.id, nombre: u.nombre, correo: u.correo, rol: u.rol, token };
+  }
+
+  async primerAdmin(dto: RegistroDTO) {
+    if (!dto.nombre || !dto.correo || !dto.contrasenia) {
+      throw new ValidationError("Faltan nombre, correo o contraseña");
+    }
+
+    const total = await this.repo.contarTodos();
+    if (total > 0) {
+      // Si ya hay usuarios, no se permite usar esta ruta
+      throw new ConflictError("Ya existe al menos un usuario registrado");
+    }
+
+    const hash = await bcrypt.hash(dto.contrasenia, 10);
+    // Fuerza rol admin para el primer usuario
+    const id = await this.repo.crear(dto.nombre, dto.correo, hash, "admin");
+    const token = this.jwt.firmar({ id, rol: "admin" });
+
+    return { id, nombre: dto.nombre, correo: dto.correo, rol: "admin", token };
   }
 }

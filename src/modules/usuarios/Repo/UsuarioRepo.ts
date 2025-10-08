@@ -26,4 +26,12 @@ export class UsuarioRepo implements IUsuarioRepo {
     );
     return result.insertId as number;
   }
+
+  async contarTodos(): Promise<number> {
+    const [rows] = await this.db.query(
+      "SELECT COUNT(*) AS total FROM usuarios"
+    );
+    const data = rows as Array<{ total: number }>;
+    return data[0]?.total ?? 0;
+  }
 }

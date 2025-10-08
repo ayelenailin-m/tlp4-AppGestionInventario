@@ -13,4 +13,6 @@ export interface IUsuarioRepo {
     contrasenia_hash: string,
     rol: "admin" | "usuario"
   ): Promise<number>;
+
+  contarTodos(): Promise<number>;
 }

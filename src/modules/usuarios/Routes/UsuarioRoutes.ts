@@ -13,13 +13,14 @@ export class UsuarioRoutes {
 
   constructor() {
     const jwt = new JwtService();
+    const auth = new AuthMiddleware(jwt);
+    const guard = new RoleGuard();
     const repo = new UsuarioRepo();
     const service = new UsuarioService(repo, jwt);
     const controller = new UsuarioController(service);
-    const guard = new RoleGuard();
-    const auth = new AuthMiddleware(jwt);
 
     this.router = Router();
+    this.router.post("/auth/primer-admin", controller.primerAdmin);
     this.router.post(
       "/auth/registro",
       auth.requiereAuth,
