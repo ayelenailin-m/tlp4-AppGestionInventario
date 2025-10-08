@@ -1,17 +1,17 @@
 // Reglas de negocio de asignar/devolver. Usa transacciones para garantizar invariantes.
 
-import { Database } from "../../../db/Database.js";
-import { DispositivoRepo } from "../../dispositivos/Repo/DispositivoRepo.js";
-import { AsignacionRepo } from "../Repo/AsignacionRepo.js";
+import { Database } from "../../../db/Database";
+import { DispositivoRepo } from "../../dispositivos/Repo/DispositivoRepo";
+import { AsignacionRepo } from "../Repo/AsignacionRepo";
 import type {
   CrearAsignacionDTO,
   DevolverAsignacionDTO,
-} from "../Model/Asignacion.model.js";
+} from "../Model/Asignacion.model";
 import {
   ConflictError,
   NotFoundError,
   ValidationError,
-} from "../../../core/Errors.js";
+} from "../../../core/Errors";
 export class AsignacionService {
   constructor(
     private asigRepo: AsignacionRepo,

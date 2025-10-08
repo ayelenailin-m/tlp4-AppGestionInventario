@@ -7,7 +7,7 @@ import type {
   ResultSetHeader,
   FieldPacket,
 } from "mysql2/promise";
-import { Env } from "../config/env.js";
+import { Env } from "../config/env";
 
 export class Database {
   private static instance: Database;

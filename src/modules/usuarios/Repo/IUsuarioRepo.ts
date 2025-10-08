@@ -2,7 +2,7 @@
 //va a permitir intercambiar de gestor de base de datos si se requiere en el futuro
 // y solo habría que cambiar los repos
 
-import type { Usuario } from "../Model/Usuario.model.js";
+import type { Usuario } from "../Model/Usuario.model";
 
 export interface IUsuarioRepo {
   buscarPorCorreo(correo: string): Promise<Usuario | undefined>;

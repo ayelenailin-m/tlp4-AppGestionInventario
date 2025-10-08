@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { TipoRepo } from "../Repo/TipoRepo.js";
-import { TipoService } from "../Service/TipoService.js";
-import { TipoController } from "../Controller/TipoController.js";
-import { AuthMiddleware } from "../../../auth/AuthMiddleware.js";
-import { JwtService } from "../../../auth/JwtService.js";
-import { RoleGuard } from "../../../auth/RoleGuard.js";
+import { TipoRepo } from "../Repo/TipoRepo";
+import { TipoService } from "../Service/TipoService";
+import { TipoController } from "../Controller/TipoController";
+import { AuthMiddleware } from "../../../auth/AuthMiddleware";
+import { JwtService } from "../../../auth/JwtService";
+import { RoleGuard } from "../../../auth/RoleGuard";
 
 export class TipoRoutes {
   public readonly router: Router;

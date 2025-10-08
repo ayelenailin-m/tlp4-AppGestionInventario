@@ -2,8 +2,8 @@
 // No hace lógica de negocio; solo autentica y adjunta el usuario al request.
 
 import type { NextFunction, Request, Response } from "express";
-import { JwtService } from "./JwtService.js";
-import { HttpResponder } from "../core/HttpResponder.js";
+import { JwtService } from "./JwtService";
+import { HttpResponder } from "../core/HttpResponder";
 
 declare global {
   namespace Express {

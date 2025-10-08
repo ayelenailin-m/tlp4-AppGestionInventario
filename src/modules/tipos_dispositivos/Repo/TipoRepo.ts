@@ -1,5 +1,5 @@
-import { Database } from "../../../db/Database.js";
-import type { Tipo } from "../Model/Tipo.model.js";
+import { Database } from "../../../db/Database";
+import type { Tipo } from "../Model/Tipo.model";
 
 export class TipoRepo {
   private db = Database.getInstance();

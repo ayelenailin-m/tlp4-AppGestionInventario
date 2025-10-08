@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { AsignacionService } from "../Service/AsignacionService.js";
-import { AsignacionController } from "../Controller/AsignacionController.js";
-import { AsignacionRepo } from "../Repo/AsignacionRepo.js";
-import { DispositivoRepo } from "../../dispositivos/Repo/DispositivoRepo.js";
-import { AuthMiddleware } from "../../../auth/AuthMiddleware.js";
-import { JwtService } from "../../../auth/JwtService.js";
-import { RoleGuard } from "../../../auth/RoleGuard.js";
+import { AsignacionService } from "../Service/AsignacionService";
+import { AsignacionController } from "../Controller/AsignacionController";
+import { AsignacionRepo } from "../Repo/AsignacionRepo";
+import { DispositivoRepo } from "../../dispositivos/Repo/DispositivoRepo";
+import { AuthMiddleware } from "../../../auth/AuthMiddleware";
+import { JwtService } from "../../../auth/JwtService";
+import { RoleGuard } from "../../../auth/RoleGuard";
 
 export class AsignacionRoutes {
   public readonly router: Router;

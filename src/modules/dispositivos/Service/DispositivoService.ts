@@ -1,10 +1,10 @@
-import { DispositivoRepo } from "../Repo/DispositivoRepo.js";
-import type { CrearDispositivoDTO } from "../Model/Dispositivo.model.js";
+import { DispositivoRepo } from "../Repo/DispositivoRepo";
+import type { CrearDispositivoDTO } from "../Model/Dispositivo.model";
 import {
   ConflictError,
   NotFoundError,
   ValidationError,
-} from "../../../core/Errors.js";
+} from "../../../core/Errors";
 
 export class DispositivoService {
   constructor(private repo: DispositivoRepo) {}

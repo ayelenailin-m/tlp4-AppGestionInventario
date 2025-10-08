@@ -1,6 +1,6 @@
-import { UbicacionRepo } from "../Repo/UbicacionRepo.js";
-import type { CrearUbicacionDTO } from "../Model/Ubicacion.model.js";
-import { ConflictError, ValidationError } from "../../../core/Errors.js";
+import { UbicacionRepo } from "../Repo/UbicacionRepo";
+import type { CrearUbicacionDTO } from "../Model/Ubicacion.model";
+import { ConflictError, ValidationError } from "../../../core/Errors";
 
 export class UbicacionService {
   constructor(private repo: UbicacionRepo) {}

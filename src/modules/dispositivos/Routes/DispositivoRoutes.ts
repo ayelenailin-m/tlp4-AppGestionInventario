@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { DispositivoRepo } from "../Repo/DispositivoRepo.js";
-import { DispositivoService } from "../Service/DispositivoService.js";
-import { DispositivoController } from "../Controller/DispositivoController.js";
-import { AuthMiddleware } from "../../../auth/AuthMiddleware.js";
-import { JwtService } from "../../../auth/JwtService.js";
-import { RoleGuard } from "../../../auth/RoleGuard.js";
+import { DispositivoRepo } from "../Repo/DispositivoRepo";
+import { DispositivoService } from "../Service/DispositivoService";
+import { DispositivoController } from "../Controller/DispositivoController";
+import { AuthMiddleware } from "../../../auth/AuthMiddleware";
+import { JwtService } from "../../../auth/JwtService";
+import { RoleGuard } from "../../../auth/RoleGuard";
 
 export class DispositivoRoutes {
   public readonly router: Router;

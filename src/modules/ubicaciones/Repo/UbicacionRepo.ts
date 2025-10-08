@@ -1,5 +1,5 @@
-import { Database } from "../../../db/Database.js";
-import type { Ubicacion } from "../Model/Ubicacion.model.js";
+import { Database } from "../../../db/Database";
+import type { Ubicacion } from "../Model/Ubicacion.model";
 
 export class UbicacionRepo {
   private db = Database.getInstance();

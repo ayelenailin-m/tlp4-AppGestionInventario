@@ -1,6 +1,6 @@
-import type { CrearTipoDTO } from "../Model/Tipo.model.js";
-import { TipoRepo } from "../Repo/TipoRepo.js";
-import { ConflictError, ValidationError } from "../../../core/Errors.js";
+import type { CrearTipoDTO } from "../Model/Tipo.model";
+import { TipoRepo } from "../Repo/TipoRepo";
+import { ConflictError, ValidationError } from "../../../core/Errors";
 
 export class TipoService {
   constructor(private repo: TipoRepo) {}

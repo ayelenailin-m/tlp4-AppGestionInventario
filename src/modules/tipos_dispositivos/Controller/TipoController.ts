@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
-import { TipoService } from "../Service/TipoService.js";
-import { HttpResponder } from "../../../core/HttpResponder.js";
+import { TipoService } from "../Service/TipoService";
+import { HttpResponder } from "../../../core/HttpResponder";
 
 export class TipoController {
   constructor(

@@ -1,10 +1,10 @@
 // acá se aplicaría la lógica de negocio, acá ni se entera de http ni de expres ni de nada
 
 import bcrypt from "bcrypt";
-import type { IUsuarioRepo } from "../Repo/IUsuarioRepo.js";
-import type { RegistroDTO, LoginDTO } from "../Model/Usuario.model.js";
-import { ConflictError, NotFoundError } from "../../../core/Errors.js";
-import { JwtService } from "../../../auth/JwtService.js";
+import type { IUsuarioRepo } from "../Repo/IUsuarioRepo";
+import type { RegistroDTO, LoginDTO } from "../Model/Usuario.model";
+import { ConflictError, NotFoundError } from "../../../core/Errors";
+import { JwtService } from "../../../auth/JwtService";
 
 export class UsuarioService {
   constructor(private repo: IUsuarioRepo, private jwt: JwtService) {}

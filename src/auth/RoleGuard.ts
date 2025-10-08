@@ -1,7 +1,7 @@
 // Guard simple por rol. Reutilizable en rutas críticas.
 import type { NextFunction, Request, Response } from "express";
-import { HttpResponder } from "../core/HttpResponder.js";
-import type { Rol } from "./JwtService.js";
+import { HttpResponder } from "../core/HttpResponder";
+import type { Rol } from "./JwtService";
 
 export class RoleGuard {
   constructor(private http = new HttpResponder()) {}

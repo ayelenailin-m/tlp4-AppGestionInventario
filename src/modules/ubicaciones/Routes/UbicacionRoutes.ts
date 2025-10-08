@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { UbicacionService } from "../Service/UbicacionService.js";
-import { UbicacionController } from "../Controller/UbicacionController.js";
-import { AuthMiddleware } from "../../../auth/AuthMiddleware.js";
-import { JwtService } from "../../../auth/JwtService.js";
-import { RoleGuard } from "../../../auth/RoleGuard.js";
-import { UbicacionRepo } from "../Repo/UbicacionRepo.js";
+import { UbicacionService } from "../Service/UbicacionService";
+import { UbicacionController } from "../Controller/UbicacionController";
+import { AuthMiddleware } from "../../../auth/AuthMiddleware";
+import { JwtService } from "../../../auth/JwtService";
+import { RoleGuard } from "../../../auth/RoleGuard";
+import { UbicacionRepo } from "../Repo/UbicacionRepo";
 
 export class UbicacionRoutes {
   public readonly router: Router;

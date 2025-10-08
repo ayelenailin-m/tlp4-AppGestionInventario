@@ -1,6 +1,6 @@
-import type { IUsuarioRepo } from "./IUsuarioRepo.js";
-import type { Usuario } from "../Model/Usuario.model.js";
-import { Database } from "../../../db/Database.js";
+import type { IUsuarioRepo } from "./IUsuarioRepo";
+import type { Usuario } from "../Model/Usuario.model";
+import { Database } from "../../../db/Database";
 
 export class UsuarioRepo implements IUsuarioRepo {
   private db = Database.getInstance();

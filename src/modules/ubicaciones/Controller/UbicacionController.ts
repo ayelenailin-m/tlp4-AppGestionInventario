@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
-import { UbicacionService } from "../Service/UbicacionService.js";
-import { HttpResponder } from "../../../core/HttpResponder.js";
+import { UbicacionService } from "../Service/UbicacionService";
+import { HttpResponder } from "../../../core/HttpResponder";
 
 export class UbicacionController {
   constructor(

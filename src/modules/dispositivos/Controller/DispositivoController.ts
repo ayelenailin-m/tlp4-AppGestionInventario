@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { DispositivoService } from "../Service/DispositivoService.js";
-import { HttpResponder } from "../../../core/HttpResponder.js";
-import { ValidationError } from "../../../core/Errors.js";
+import { DispositivoService } from "../Service/DispositivoService";
+import { HttpResponder } from "../../../core/HttpResponder";
+import { ValidationError } from "../../../core/Errors";
 
 export class DispositivoController {
   constructor(

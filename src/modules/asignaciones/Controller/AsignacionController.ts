@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
-import { AsignacionService } from "../Service/AsignacionService.js";
-import { HttpResponder } from "../../../core/HttpResponder.js";
-import { ValidationError } from "../../../core/Errors.js";
+import { AsignacionService } from "../Service/AsignacionService";
+import { HttpResponder } from "../../../core/HttpResponder";
+import { ValidationError } from "../../../core/Errors";
 
 export class AsignacionController {
   constructor(

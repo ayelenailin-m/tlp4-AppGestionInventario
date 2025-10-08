@@ -1,5 +1,5 @@
-import { Database } from "../../../db/Database.js";
-import type { Dispositivo } from "../Model/Dispositivo.model.js";
+import { Database } from "../../../db/Database";
+import type { Dispositivo } from "../Model/Dispositivo.model";
 
 export class DispositivoRepo {
   private db = Database.getInstance();

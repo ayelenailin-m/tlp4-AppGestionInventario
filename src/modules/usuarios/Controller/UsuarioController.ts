@@ -2,9 +2,9 @@
 // valida lo minimo necesario
 
 import type { Request, Response } from "express";
-import { UsuarioService } from "../Service/UsuarioService.js";
-import { HttpResponder } from "../../../core/HttpResponder.js";
-import { ValidationError } from "../../../core/Errors.js";
+import { UsuarioService } from "../Service/UsuarioService";
+import { HttpResponder } from "../../../core/HttpResponder";
+import { ValidationError } from "../../../core/Errors";
 
 export class UsuarioController {
   constructor(
