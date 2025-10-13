@@ -1,0 +1,40 @@
+services:
+  app:
+    build: .
+    container_name: inventario_app
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: gestion_inventario
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    networks:
+      - app-network
+
+volumes:
+  mysql-data:
+
+networks:
+  app-network:
+    driver: bridge
